@@ -24,19 +24,24 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Nama</th>
-                            <th>Desc</th>
+                            <th>Nama Program</th>
+                            <th>Edulevel</th>
+                            <th>info</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($edulevel as $item)
+                        @foreach ($program as $item)
                        
                         <tr>
                             <td>{{$loop->iteration}}</td>
                             <td>{{$item->nama}}</td>
-                            <td>{{$item->desc}}</td>
+                            <td>{{$item->Edulevel->nama}}</td>
+                            <td>{{$item->info}}</td>
                             <td class="text-center">
+                                <a href="{{url('/Programs')}}/{{$item->id}}" class="btn btn-info btn-sm">
+                                    <i class="fa fa-eye"></i>
+                                </a>
                                 <a href="{{url('Edulevels/')}}/{{$item->id}}" class="btn btn-primary btn-sm">
                                     <i class="fa fa-pencil"></i>
                                 </a>

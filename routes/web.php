@@ -3,6 +3,7 @@
 use App\Http\Controllers\BooksController;
 use App\Http\Controllers\EdulevelsController;
 use App\Http\Controllers\HomeControllers;
+use App\Http\Controllers\ProgramsController;
 use App\Models\Edulavel;
 use Illuminate\Support\Facades\Route;
 
@@ -18,7 +19,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeControllers::class, 'index']);
-Route::patch('/Edulevels/{edulevel}', [EdulevelsController::class, 'update']);
+
+// Edulevels
+Route::get('/Edulevels', [EdulevelsController::class, 'index']);
+Route::get('/Edulevels/create', [EdulevelsController::class, 'create']);
 Route::get('/Edulevels/{edulevel}', [EdulevelsController::class, 'edit']);
+Route::post('/Edulevels', [EdulevelsController::class, 'store']);
+Route::patch('/Edulevels/{edulevel}', [EdulevelsController::class, 'update']);
 Route::delete('/Edulevels/{edulevel}', [EdulevelsController::class, 'destroy']);
-Route::resource('/Edulevels', EdulevelsController::class);
+// Route::resource('/Edulevels', EdulevelsController::class);
+
+
+// Programs
+Route::get('/Programs/{program}', [ProgramsController::class, 'show']);
+Route::resource('/Programs', ProgramsController::class);

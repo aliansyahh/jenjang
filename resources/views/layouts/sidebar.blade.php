@@ -11,14 +11,14 @@
 
         <div id="main-menu" class="main-menu collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li>
+                <li class="">
                     <a href="{{url('')}}"> <i class="menu-icon fa fa-dashboard"></i>Home </a>
                 </li>
                 <li>
                     <a href="{{url('/Edulevels')}}"> <i class="menu-icon fa fa-puzzle-piece"></i>Jenjang </a>
                 </li>
                 <li>
-                    <a href=""> <i class="menu-icon fa fa-puzzle-piece"></i>Program </a>
+                    <a href="{{url('/Programs')}}"> <i class="menu-icon fa fa-puzzle-piece"></i>Program </a>
                 </li>
             </ul>
         </div><!-- /.navbar-collapse -->
