@@ -31,5 +31,10 @@ Route::delete('/Edulevels/{edulevel}', [EdulevelsController::class, 'destroy']);
 
 
 // Programs
+Route::get('/Programs/create', [ProgramsController::class, 'create']);
+Route::get('/Programs/{program}/edit', [ProgramsController::class, 'edit']);
+Route::patch('/Programs/{program}', [ProgramsController::class, 'update']);
+Route::delete('/Programs/{program}', [ProgramsController::class, 'destroy']);
+Route::post('/Programs', [ProgramsController::class, 'store']);
 Route::get('/Programs/{program}', [ProgramsController::class, 'show']);
 Route::resource('/Programs', ProgramsController::class);

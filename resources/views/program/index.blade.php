@@ -5,10 +5,10 @@
     <div class="card">
         <div class="card-header">
             <div class="pull-left">
-                <strong>Data Jenjang</strong>
+                <strong>Data Programs</strong>
             </div>
             <div class="pull-right">
-                <a href="{{url('/Edulevels/create')}}" class="btn btn-success btn-sm">
+                <a href="{{url('/Programs/create')}}" class="btn btn-success btn-sm">
                     <i class="fa fa-plus"></i> Add
                 </a>
             </div>
@@ -26,7 +26,6 @@
                             <th>No</th>
                             <th>Nama Program</th>
                             <th>Edulevel</th>
-                            <th>info</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -37,15 +36,14 @@
                             <td>{{$loop->iteration}}</td>
                             <td>{{$item->nama}}</td>
                             <td>{{$item->Edulevel->nama}}</td>
-                            <td>{{$item->info}}</td>
                             <td class="text-center">
                                 <a href="{{url('/Programs')}}/{{$item->id}}" class="btn btn-info btn-sm">
                                     <i class="fa fa-eye"></i>
                                 </a>
-                                <a href="{{url('Edulevels/')}}/{{$item->id}}" class="btn btn-primary btn-sm">
+                                <a href="{{url('/Programs')}}/{{$item->id}}/edit" class="btn btn-primary btn-sm">
                                     <i class="fa fa-pencil"></i>
                                 </a>
-                                <form action="{{url('/Edulevels')}}/{{$item->id }}" method="post" class="d-inline">
+                                <form action="{{url('/Programs')}}/{{$item->id }}" method="post" class="d-inline">
                                     @method('delete')
                                     @csrf
 

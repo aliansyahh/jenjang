@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class Program extends Model
 {
     use HasFactory;
-    protected $fillable = [];
+    protected $fillable = ['nama', 'edulevel_id', 'studen_price', 'student_max', 'info'];
     public $timestamps = true;
 
     public function Edulevel()
